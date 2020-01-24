@@ -39,7 +39,7 @@ int cb(struct nfq_q_handle *qh, struct nfgenmsg *nfmsg,
                 && flow_map.find(flowport(je_packet->tcp_header.th_dport, je_packet->tcp_header.th_sport)) == flow_map.end()
                 ){
 
-            if (je_packet->tcp_header.th_dport == htons(80)) {
+            if (je_packet->tcp_header.th_dport == htons(443)) {
                 timeout t;
                 cout << "insert" << endl;
                 flow_map.insert(make_pair(flowport(je_packet->tcp_header.th_sport, je_packet->tcp_header.th_dport), make_pair(je_packet->ip_header.ip_dst.s_addr, t)));
