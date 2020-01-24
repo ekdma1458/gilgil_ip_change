@@ -41,7 +41,6 @@ int cb(struct nfq_q_handle *qh, struct nfgenmsg *nfmsg,
 
             if (je_packet->tcp_header.th_dport == htons(443)) {
                 timeout t;
-                cout << "insert" << endl;
                 flow_map.insert(make_pair(flowport(je_packet->tcp_header.th_sport, je_packet->tcp_header.th_dport), make_pair(je_packet->ip_header.ip_dst.s_addr, t)));
                 je_packet->ip_header.ip_dst.s_addr = dst_ip;
             } else {
