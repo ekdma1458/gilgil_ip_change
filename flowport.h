@@ -10,6 +10,7 @@ private:
 public:
     flowport(uint16_t, uint16_t);
     bool operator<(const flowport& other) const;
+    void toString();
 };
 
 #endif // FLOWPORT_H
