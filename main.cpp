@@ -6,6 +6,6 @@ int main(int argc, char *argv[])
         usage();
         return 0;
     }
-    //getNetFilterPacket(inet_addr(argv[1]));
+    getNetFilterPacket(inet_addr(argv[1]));
     return 0;
 }
